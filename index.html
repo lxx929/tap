@@ -11,7 +11,7 @@
 
 <body>
     <div class="box">
-        <button>
+        <button class="a">
                 电源
             </button>
         <button>
@@ -24,13 +24,35 @@
                 投屏
             </button>
     </div>
+    <div class="list">
+        <span>
+            11111
+        </span>
+
+        <span>
+    22222
+    </span>
+
+        <span>
+    33333
+    </span>
+
+        <span>
+    444444
+    </span>
+    </div>
 </body>
+<script src="jquery-1.8.3.min.js"></script>
+
 <script>
-    var lis = [...document.querySelectorAll('li')];
-    console.log(lis);
-    lis.onclick = function() {
-        this.classList.add('back').siblings.classList.remove('back');
-    }
+    $(function() {
+        $(".list span").hide();
+        $(".box button").on("click", function() {
+            var ind = $(this).index();
+            $(this).addClass("bg").siblings().removeClass("bg");
+            $(".list span").eq(ind).show().siblings().hide();
+        })
+    })
 </script>
 
 </html>
