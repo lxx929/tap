@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tap切换</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="box">
+        <button>
+                电源
+            </button>
+        <button>
+                调节
+            </button>
+        <button>
+                菜单
+            </button>
+        <button>
+                投屏
+            </button>
+    </div>
+</body>
+<script>
+    var lis = [...document.querySelectorAll('li')];
+    console.log(lis);
+    lis.onclick = function() {
+        this.classList.add('back').siblings.classList.remove('back');
+    }
+</script>
+
+</html>
